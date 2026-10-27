@@ -32,6 +32,9 @@ const finalHtml = `<!DOCTYPE html>
     <title>SAKSHAM: THE CROWN — Every Move Builds a Legacy</title>
     <meta name="description" content="SAKSHAM: THE CROWN — A bespoke dark royal 3D chess experience personalized for Saksham Parashar. Procedural WebGL visuals, tournament-grade legal rules, and responsive mobile-first craftsmanship.">
 
+    <!-- Royal Favicon (Inlined Data URI avoids 404 on favicon.ico) -->
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Cpath d='M20 74C35 77 65 77 80 74L77 66C63 68 37 68 23 66L20 74Z' fill='%23dfb758'/%3E%3Cpath d='M22 66L27 40L39 52L50 26L61 52L73 40L78 66C64 69 36 69 22 66Z' fill='%23dfb758'/%3E%3Ccircle cx='50' cy='24' r='3.5' fill='%23fff5d0'/%3E%3C/svg%3E">
+
     <!-- Google Fonts Preconnect & Stylesheets (with native serif/sans-serif fallbacks) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -60,11 +63,15 @@ ${gameJs}
 
 const target1 = 'C:/Users/omgup/.gemini/antigravity/scratch/saksham-the-crown/SAKSHAM_THE_CROWN.html';
 const target2 = 'C:/Users/omgup/AppData/Local/Programs/antigravity/SAKSHAM_THE_CROWN.html';
+const target3 = 'C:/Users/omgup/.gemini/antigravity/scratch/saksham-the-crown/index.html';
 
 fs.writeFileSync(target1, finalHtml, 'utf8');
 console.log('Saved deliverable 1 to:', target1, 'Size:', fs.statSync(target1).size, 'bytes');
 
 fs.writeFileSync(target2, finalHtml, 'utf8');
 console.log('Saved deliverable 2 to:', target2, 'Size:', fs.statSync(target2).size, 'bytes');
+
+fs.writeFileSync(target3, finalHtml, 'utf8');
+console.log('Saved deliverable 3 (GitHub Pages entry) to:', target3, 'Size:', fs.statSync(target3).size, 'bytes');
 
 console.log('Assembly completed successfully!');

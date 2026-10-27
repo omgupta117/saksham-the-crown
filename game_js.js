@@ -3011,8 +3011,13 @@ module.exports = `
             if (m) {
                 chess.undo();
                 executeCommittedMove(m);
+                return m;
             }
-        }
+            return null;
+        },
+        getBoardSquares: function() { return boardSquares; },
+        getPiecesInPlay: function() { return piecesInPlay; },
+        getBoardGroup: function() { return boardGroup; }
     };
 
     function showToast(msg) {
